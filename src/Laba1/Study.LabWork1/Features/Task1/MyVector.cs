@@ -134,4 +134,14 @@ public class MyVector(double x, double y)
     {
         return $"({DirectionX}, {DirectionY})";
     }
+
+    /// <summary>
+    /// Переопределение оператора для получения длины вектора
+    /// </summary>
+    /// <param name="rhs"></param>
+    /// <returns></returns>
+    public static double operator +(MyVector rhs)
+    {
+        return Math.Sqrt(rhs.DirectionX * rhs.DirectionX + rhs.DirectionY * rhs.DirectionY);
+    }
 }
