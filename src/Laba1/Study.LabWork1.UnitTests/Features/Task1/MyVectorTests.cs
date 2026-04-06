@@ -6,6 +6,7 @@ namespace Study.LabWork1.UnitTests.Features.Task1;
 [TestFixture]
 public class MyVectorTests
 {
+
     [Test]
     public void Addition_ShouldSumCoordinates()
     {
@@ -52,7 +53,7 @@ public class MyVectorTests
 
         Assert.That(resultRight.DirectionX, Is.EqualTo(expX));
         Assert.That(resultRight.DirectionY, Is.EqualTo(expY));
-        Assert.That(resultLeft, Is.EqualTo(resultRight), "Commutative property failed");
+        Assert.That(resultLeft, Is.EqualTo(resultRight), "Коммутативность поломана");
     }
 
     [Test]
