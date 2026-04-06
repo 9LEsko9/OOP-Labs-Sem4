@@ -1,6 +1,3 @@
-using System.Runtime.CompilerServices;
-using Microsoft.VisualBasic.CompilerServices;
-
 namespace Study.LabWork1.Features.Task1;
 
 /// <summary>
