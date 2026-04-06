@@ -92,4 +92,22 @@ public class MyVectorTests
         var v = new MyVector(5, 10);
         Assert.That(v.ToString(), Is.EqualTo("(5, 10)"));
     }
+
+
+    [Test]
+    public void UnaryPlus_ShouldReturnVectorLength()
+    {
+        var v = new MyVector(3, 4);
+
+        double length = +v;
+
+        Assert.That(length, Is.EqualTo(5.0));
+    }
+
+    [Test]
+    public void UnaryPlus_ZeroVector_ShouldReturnZero()
+    {
+        var v = new MyVector(0, 0);
+        Assert.That(+v, Is.EqualTo(0.0));
+    }
 }
