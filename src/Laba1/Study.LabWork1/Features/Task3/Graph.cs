@@ -5,7 +5,7 @@ namespace Study.LabWork1.Features.Task3;
 /// <summary>
 /// Класс графа
 /// </summary>
-class Graph
+public class Graph
 {
     private readonly List<GraphNode> _nodes = [];
     private readonly List<GraphEdge> _edges = [];
