@@ -14,6 +14,4 @@ public class GraphEdge(GraphNode outgoing, GraphNode destination)
     /// Узел куда приходит ребро
     /// </summary>
     public GraphNode Destination { get; } = destination;
-
-
 }

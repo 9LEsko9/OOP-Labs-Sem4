@@ -24,9 +24,12 @@ public class RunService : IRunService
     public void RunTask3()
     {
         Graph graph = new Graph();
-        GraphNode n1 = new GraphNode(10), n2 = new GraphNode(20),
-            n3 = new GraphNode(30), n4 = new GraphNode(40),
-            n5 = new GraphNode(50), n6 = new GraphNode(60);
+        var n1 = new GraphNode(10);
+        var n2 = new GraphNode(20);
+        var n3 = new GraphNode(30);
+        var n4 = new GraphNode(40);
+        var n5 = new GraphNode(50);
+        var n6 = new GraphNode(60);
 
         graph.AddNode(n1);
         graph.AddNode(n2, n1);
