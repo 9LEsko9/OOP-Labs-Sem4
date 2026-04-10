@@ -275,6 +275,12 @@ ServiceFabricBackup/
 *- [Bb]ackup ([0-9]).rdl
 *- [Bb]ackup ([0-9][0-9]).rdl
 
+# JB Rider files
+*.idea
+
+# MacOS temp files
+*.DS_Store
+
 # Microsoft Fakes
 FakesAssemblies/
 
