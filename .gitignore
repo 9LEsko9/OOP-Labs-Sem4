@@ -281,6 +281,12 @@ FakesAssemblies/
 # GhostDoc plugin setting file
 *.GhostDoc.xml
 
+# JB Rider files
+*.idea
+
+# MacOS Temp files
+*.DS_Store
+
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 node_modules/

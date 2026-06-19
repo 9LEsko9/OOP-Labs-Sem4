@@ -1,3 +1,4 @@
+using Study.LabWork1.Features.Task3;
 using Study.LabWork1.Shared.Abstractions;
 
 namespace Study.LabWork1.Shared.Services;
@@ -20,5 +21,24 @@ public class RunService : IRunService
     /// <summary>
     /// Задание 3
     /// </summary>
-    public void RunTask3() => throw new NotImplementedException();
+    public void RunTask3()
+    {
+        Graph graph = new Graph();
+        var n1 = new GraphNode(10);
+        var n2 = new GraphNode(20);
+        var n3 = new GraphNode(30);
+        var n4 = new GraphNode(40);
+        var n5 = new GraphNode(50);
+        var n6 = new GraphNode(60);
+
+        graph.AddNode(n1);
+        graph.AddNode(n2, n1);
+        graph.AddNode(n3, n1);
+
+        graph.AddNode(n4, n2);
+        graph.AddNode(n5, n2);
+        graph.AddNode(n6, n2);
+
+        graph.Nodes.First().Print();
+    }
 }
