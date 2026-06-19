@@ -8,7 +8,29 @@ namespace Study.LabWork2.Feature.Task1.SubTask1;
 /// </summary>
 public sealed class SemaphoreService : IPrimeCounter
 {
-    public PrimeCountResultDto CountPrimes(int start, int end, int threadCount) => throw new NotImplementedException();
+    /// <summary>
+    /// Подсчитывает простые числа в указанном диапазоне с синхронизацией через Semaphore.
+    /// </summary>
+    public PrimeCountResultDto CountPrimes(int start, int end, int threadCount)
+    {
+        using var semaphore = new Semaphore(1, 1);
 
-    public string GetVersionName() => throw new NotImplementedException();
+        return PrimeCounterRunner.CountPrimes(start, end, threadCount, GetVersionName(), action =>
+        {
+            semaphore.WaitOne();
+            try
+            {
+                action();
+            }
+            finally
+            {
+                semaphore.Release();
+            }
+        });
+    }
+
+    /// <summary>
+    /// Возвращает название варианта синхронизации.
+    /// </summary>
+    public string GetVersionName() => "Semaphore";
 }
