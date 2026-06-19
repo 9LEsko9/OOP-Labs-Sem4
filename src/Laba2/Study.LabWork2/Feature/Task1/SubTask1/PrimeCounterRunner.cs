@@ -32,21 +32,17 @@ internal static class PrimeCounterRunner
 
         for (var index = 0; index < threadCount; index++)
         {
-            var threadNumber = index + 1;
             var range = ranges[index];
 
             threads[index] = new Thread(() =>
             {
                 for (var number = range.Start; number <= range.End; number++)
                 {
-                    WriteCheckedNumber(threadNumber, number);
-
                     if (!IsPrime(number))
                     {
                         continue;
                     }
 
-                    WriteFoundPrime(threadNumber, number);
                     synchronize(() =>
                     {
                         primeCount++;
@@ -119,15 +115,5 @@ internal static class PrimeCounterRunner
         }
 
         return true;
-    }
-
-    private static void WriteCheckedNumber(int threadNumber, int number)
-    {
-        Console.WriteLine($"Поток {threadNumber}: проверяется число {number}");
-    }
-
-    private static void WriteFoundPrime(int threadNumber, int number)
-    {
-        Console.WriteLine($"Поток {threadNumber}: найдено простое число {number}");
     }
 }

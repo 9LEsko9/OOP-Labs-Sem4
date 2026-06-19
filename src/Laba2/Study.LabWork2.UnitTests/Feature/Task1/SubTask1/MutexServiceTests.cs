@@ -39,7 +39,7 @@ public sealed class MutexServiceTests
     }
 
     [Test]
-    public void CountPrimesWritesThreadProgressAndFoundPrimes()
+    public void CountPrimesDoesNotWriteThreadProgress()
     {
         var service = new MutexService();
         using var writer = new StringWriter();
@@ -52,9 +52,7 @@ public sealed class MutexServiceTests
 
             Assert.That(result.PrimeCount, Is.EqualTo(4));
 
-            var output = writer.ToString();
-            Assert.That(output, Does.Contain("Поток 1: проверяется число 1"));
-            Assert.That(output, Does.Contain("Поток 1: найдено простое число 2"));
+            Assert.That(writer.ToString(), Is.Empty);
         }
         finally
         {

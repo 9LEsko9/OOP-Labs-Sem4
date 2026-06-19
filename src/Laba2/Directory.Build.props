@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Vsxmd 1.4.6 ships an unsigned macOS binary that is killed before it starts. -->
+    <VsxmdBinary Condition="$([MSBuild]::IsOsPlatform('OSX'))">/usr/bin/true</VsxmdBinary>
+  </PropertyGroup>
+</Project>
